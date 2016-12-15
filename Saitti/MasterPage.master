@@ -10,7 +10,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <img id="MotivoivaKuva" src="Picture/Figure8.png" runat="server"/>
+    <asp:Image DataSource="Picture/Figure8.png" runat="server"/>
     <h1>Mitä yrityksen DemoxOy asiakkaille kuuluu...</h1>
     <form id="form1" runat="server">
     <div>

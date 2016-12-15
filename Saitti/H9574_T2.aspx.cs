@@ -14,36 +14,14 @@ public partial class H9574_T2 : System.Web.UI.Page
         {
             //Täytetään dropbox
             PopulateDDL();
-            //Bind photos to Repeater
-            //Repeater1.DataSource = GetPhotos();
-            //Repeater1.DataBind();
-
-            //kuvan esikatselu
+            //kuvan esikatselu valittuna
+            
             string filename = DDLpicture.SelectedItem.Text;
             Image.ImageUrl = "~/Pictures/" + Path.GetFileName(filename);
-            Response.Redirect(Request.RawUrl);
         }
         catch (Exception ex)
         {
             myLabel.Text = ex.Message;
-        }
-    }
-    protected List<String> GetPhotos()
-    {
-        try
-        {
-            List<String> photos = new List<string>();
-            string photosPath = MapPath("~/Pictures");
-            string[] files = Directory.GetFiles(photosPath);
-            foreach (var filename in files)
-            {
-                photos.Add("~/Pictures/" + Path.GetFileName(filename));
-            }
-            return photos;
-        }
-        catch (Exception ex)
-        {
-            throw;
         }
     }
     public void PopulateDDL()
@@ -54,9 +32,11 @@ public partial class H9574_T2 : System.Web.UI.Page
             List<String> photos = new List<string>();
             string photosPath = MapPath("~/Pictures");
             string[] files = Directory.GetFiles(photosPath);
+            int i = 0;
             foreach (var filename in files)
             {
-                DDLpicture.Items.Insert(0, new ListItem(Path.GetFileName(filename)));
+                DDLpicture.Items.Insert(i, new ListItem(Path.GetFileName(filename)));
+                i = i + 1;
             }
             //Tiedon sitominen
             DDLpicture.DataBind();
@@ -69,7 +49,8 @@ public partial class H9574_T2 : System.Web.UI.Page
 
     protected void DDLpicture_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Image image = this.Kuva;
-        image.ImageUrl = ((DropDownList)sender).SelectedValue;
+        string filename = DDLpicture.SelectedItem.Text;
+        Image.ImageUrl = "~/Pictures/" + Path.GetFileName(filename);
+        //Response.Redirect(Request.RawUrl);
     }
 }

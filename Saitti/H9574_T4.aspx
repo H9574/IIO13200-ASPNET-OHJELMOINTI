@@ -12,12 +12,13 @@
     <h1>4a: RockoRecords</h1>
             <asp:Button ID="btnHaeKaikki" runat="server" Text="Hae koko levyvarasto" OnClick="btnHaeKaikki_Click"/>
             <asp:Button ID="btnHaeArtisti" runat="server" Text="Hae artistin mukaan" OnClick="btnHaeArtisti_Click"/>
-            <asp:RadioButtonList runat="server">
-                <asp:ListItem>Halvat (alle 10)</asp:ListItem>
-                <asp:ListItem>Keskihintaiset (10-20)</asp:ListItem>
-                <asp:ListItem>Kalliit (yli 20)</asp:ListItem>
-            </asp:RadioButtonList>
-            <asp:DropDownList ID="Countries" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="DDLprice" runat="server" onselectedindexchanged="DDLprice_SelectedIndexChanged">
+                <asp:ListItem Value="0">Kaikki</asp:ListItem>
+                <asp:ListItem Value="1">Halvat (alle 10)</asp:ListItem>
+                <asp:ListItem Value="2">Keskihintaiset (10-20)</asp:ListItem>
+                <asp:ListItem Value="3">Kalliit (yli 20)</asp:ListItem>
+            </asp:DropDownList>
+            <asp:DropDownList ID="Countries" runat="server" onselectedindexchanged="Countries_SelectedIndexChanged"></asp:DropDownList>
         <div id ="esitys">
             <asp:GridView ID="gvData" runat="server"></asp:GridView>
         </div>

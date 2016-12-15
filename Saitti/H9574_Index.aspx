@@ -24,8 +24,8 @@
             <asp:TableRow runat="server">
                 <asp:TableCell>Pistemäärä</asp:TableCell>
                 <asp:TableCell>5/5</asp:TableCell>
-                <asp:TableCell>/10</asp:TableCell>
-                <asp:TableCell>/10</asp:TableCell> 
+                <asp:TableCell>4/10</asp:TableCell>
+                <asp:TableCell>3/10</asp:TableCell> 
                 <asp:TableCell>/10</asp:TableCell>
             </asp:TableRow>
         </asp:Table>

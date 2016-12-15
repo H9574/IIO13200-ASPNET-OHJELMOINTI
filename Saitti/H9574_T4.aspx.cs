@@ -37,5 +37,18 @@ public partial class H9574_T4 : System.Web.UI.Page
     protected void btnHaeArtisti_Click(object sender, EventArgs e)
     {
 
+        //lblMessage.Text = string.Format("Löytyi {0} levyä", dt.Rows.Count);
+    }
+
+    protected void DDLprice_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+        //lblMessage.Text = string.Format("Löytyi {0} levyä", dt.Rows.Count);
+    }
+
+    protected void Countries_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+        //lblMessage.Text = string.Format("Löytyi {0} levyä", dt.Rows.Count);
     }
 }
